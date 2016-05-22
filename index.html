@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #map {
+        width: 500px;
+        height: 400px;
+        background-color: #CCC;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>          
+          <div id="map"></div>
+        </td>
+        <td>
+          <table id="table_waypoints">
+          <tr>
+            <td>Waypoints</td>
+          </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    
+    <div id="div_addWaypoint" style="display: none; position:fixed; top:30%; left:30%; background-color: #CCC; width:50%; height: 30%">
+      <table>
+        <tr>
+          <td>Enter a new waypoint: </td>
+          <td><input id="input_waypoint" placeholder="Enter location" type="text" /></td>
+          <td><input id="input_waypoint_ok" type="button" value="Ok" /></td>
+        <tr>
+      </table>
+    </div>
+            
+    <script>
+    
+    var map;
+    var autocomplete;
+    
+    function addRowOfWaypointElements(waypointId, addFunc, removeFunc) {
+      
+      var table_waypoints = document.getElementById('table_waypoints');
+      var newRow = table_waypoints.insertRow(table_waypoints.rows.length);      
+      
+      var input = document.createElement("input");
+      input.type = "text";
+      input.id = "input_waypoint_" + waypointId;
+      input.disabled = true;
+      var text_cell = newRow.insertCell(0);
+      text_cell.appendChild(input);
+      
+      var buttonAdd = document.createElement("button");
+      buttonAdd.type = "button";
+      buttonAdd.textContent = "Add";
+      buttonAdd.id = "button_waypoint_add_" + waypointId;
+      buttonAdd.onclick = addFunc;
+      var text_cell2 = newRow.insertCell(1);
+      text_cell2.appendChild(buttonAdd);
+      
+      var buttonRemove = document.createElement("button");
+      buttonRemove.type = "button";
+      buttonRemove.textContent = "Remove";
+      buttonRemove.id = "button_waypoint_remove_" + waypointId;
+      buttonRemove.onclick = removeFunc;
+      var text_cell3 = newRow.insertCell(2);
+      text_cell3.appendChild(buttonRemove);
+      
+    }
+    
+    function addWaypoint() {
+      
+    }
+    
+    function removeWaypoint() {
+      
+    }
+      
+    function showAddWaypointUI() {
+      var addUI = document.getElementById('div_addWaypoint');
+      addUI.style.display = "inline-block";
+      initAutocomplete('input_waypoint');
+    } 
+        
+    function initMap() {      
+      var mapDiv = document.getElementById('map');
+      map = new google.maps.Map(mapDiv, {
+        center: {lat: 0, lng: 0},
+        zoom: 1
+      });
+      
+      showAddWaypointUI();
+            
+      //addRowOfWaypointElements("1", addWaypoint, removeWaypoint);
+    }   
+    
+    function initAutocomplete(inputId) {
+        // Create the autocomplete object, restricting the search to geographical
+        // location types.
+        var input = document.getElementById(inputId);
+
+        // set the bounds of the autocomplete to the entire world
+        // TODO might want to set this to something else ?
+        var defaultBounds = new google.maps.LatLngBounds(
+          new google.maps.LatLng(-90, -180),
+          new google.maps.LatLng(90, 180));
+        
+        autocomplete = new google.maps.places.Autocomplete(input),
+            {
+              bounds: defaultBounds,
+              types: ['geocode']
+            };
+        autocomplete.bindTo('bounds', map);
+
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete.addListener('place_changed', wayPointCompleted);        
+    }
+    
+    function wayPointCompleted() {
+        
+        // Get the place details from the autocomplete object.
+        var place = autocomplete.getPlace();
+
+        if (!place.geometry) {
+            window.alert("Autocomplete's returned place contains no geometry");
+            return;
+          }
+                
+        // If the place has a geometry, then present it on a map.
+        if (place.geometry.viewport) {
+          map.fitBounds(place.geometry.viewport);
+        } else {
+          map.setCenter(place.geometry.location);
+          // TODO We may need to change the zoom, depending on what the user is searching for (cities, specific addresses ?)
+          map.setZoom(4);
+        }
+                
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location,
+          // this will bounce the marker until we set setAnimation(null) animation: google.maps.Animation.BOUNCE,
+          // this shows a text inside the marker, but it can only be one character label: '1',
+          // this shows a longer text when the user clicks on the marker title: 'Bucharest'
+        });
+
+        // marker.setIcon(/** @type {google.maps.Icon} */({
+        //     url: place.icon,
+        //     size: new google.maps.Size(71, 71),
+        //     origin: new google.maps.Point(0, 0),
+        //     anchor: new google.maps.Point(17, 34),
+        //     scaledSize: new google.maps.Size(25, 25) // this determines the size of the marker
+        //   }));
+
+      }
+    
+    </script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHrn3ecByPhO6nvW1xQHLsO61joCBIGds&libraries=places&callback=initMap"
+        async defer></script>
+  
+  </body>
+</html>
