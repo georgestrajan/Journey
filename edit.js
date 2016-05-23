@@ -1,34 +1,24 @@
 function editJourney()
-{
-    
-    var map;
-    var mapDiv;
+{    
+    var map = null;
     
     // contains objects which have the properties id, name and place
     var waypoints = [];
-        
-    // the waypoint we are currently adding to the list of waypoints
-    var currentWaypoint = null;
-    
-    init();
-    
-    function init() {
-      
-      initMap();
-      
-      // we start off by adding a waypoint
-      showAddWaypointUI();
             
-    }
+    initMap();
+    
+    // we start off by adding a waypoint
+    showAddWaypointUI();            
     
     function initMap() {      
-      mapDiv = document.getElementById('map');
+      var mapDiv = document.getElementById('map');
       map = new google.maps.Map(mapDiv, {
         center: {lat: 0, lng: 0},
         zoom: 1
       });      
     } 
     
+    // return the index of a waypoint that has a specific Id; or -1 if none was found
     function getWaypointIndexById(Id) {
         for (var i = 0, iLen = waypoints.length; i < iLen; i++) {
             if (waypoints[i].Id == Id) return i;
@@ -36,7 +26,8 @@ function editJourney()
         return -1;
     }
     
-    function addWaypointToList(currentlyAddingWaypointIndex) {
+    // add a waypoint to the list of waypoints and to the table of waypoints
+    function addWaypointToList(currentlyAddingWaypointIndex, currentWaypoint) {
     
       waypoints.splice(currentlyAddingWaypointIndex, 0, currentWaypoint);  
       
@@ -56,8 +47,10 @@ function editJourney()
       buttonAdd.textContent = "Add";
       buttonAdd.id = currentWaypoint.Id;
       buttonAdd.onclick = function(e) {
+
           // find in the waypoints array the object which has the Id equal to e.target.id
           showAddWaypointUI(getWaypointIndexById(e.target.id));          
+
       };
       
       var text_cell2 = newRow.insertCell(1);
@@ -68,22 +61,30 @@ function editJourney()
       buttonRemove.textContent = "Remove";
       buttonRemove.id = currentWaypoint.Id;
       buttonRemove.onclick = function(e) {
+      
+          // remove the waypoint from the array, the marker from the map and the row from the table of waypoints    
           var indexToRemove = getWaypointIndexById(e.target.id);
+          
+          // remove the marker from the map
+          if (waypoints[indexToRemove].Marker) {
+              waypoints[indexToRemove].Marker.setMap(null);
+          }
+          
           waypoints.splice(indexToRemove, 1);
           table_waypoints.deleteRow(indexToRemove);
           
-          // TODO also remove the pin from the map!!          
       };
       
       var text_cell3 = newRow.insertCell(2);
       text_cell3.appendChild(buttonRemove);
       
     }
-         
+    
+    // show the UI for adding a waypoint and handle the user interactions that follow     
     function showAddWaypointUI(currentlyAddingWaypointIndex) {
       
       var autocomplete = null;
-      currentWaypoint = null;
+      var currentWaypoint = null;
       
       var input = document.getElementById('input_waypoint');
       input.value = "";
@@ -117,11 +118,14 @@ function editJourney()
         currentWaypoint = {
                 Id : guid(),
                 Name : input.value,
-                Place : place
+                Place : place,
+                Marker : null
             };          
       }); 
 
       var input_waypoint_ok = document.getElementById('input_waypoint_ok');
+      
+      // user clicks Ok so we need to add the waypoint to the array, to the table and show it on the map
       input_waypoint_ok.onclick = function clicked(e) {
           
         if (!currentWaypoint.Place) {
@@ -131,10 +135,7 @@ function editJourney()
         
         var addUI = document.getElementById('div_addWaypoint');
         addUI.style.display = "none";                
-        
-        currentlyAddingWaypointIndex += 1;
-        addWaypointToList(currentlyAddingWaypointIndex)
-        
+                
         // If the place has a geometry, then present it on a map.
         if (currentWaypoint.Place.geometry.viewport) {
           map.fitBounds(currentWaypoint.Place.geometry.viewport);
@@ -152,14 +153,16 @@ function editJourney()
           // this shows a longer text when the user clicks on the marker title: 'Bucharest'
         });
         
-          
-      };      
-    } 
-    
-    function newWaypointOkClicked() {
+        currentWaypoint.Marker = marker;
         
-    }    
-    
+        currentlyAddingWaypointIndex += 1;
+        addWaypointToList(currentlyAddingWaypointIndex, currentWaypoint)
+          
+      };
+      
+            
+    } 
+        
     function guid() {
         function s4() {
             return Math.floor((1 + Math.random()) * 0x10000)
