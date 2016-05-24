@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body, html {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      }
+     #map {          
+        width: 100%;
+        height: 70%;
+        margin: 0;
+        padding: 0;
+        background-color: #CCC;
+        top: 0;
+        left: 0;
+      }
+     #controls {
+       width: 100px;
+       margin: 0 auto;      
+     }
+    </style>
+  </head>
+  <body>
+      <div id="map"></div>          
+      <div id="controls">
+        <input id="button_playJourney" type="button" value="Play journey" />
+      </div>
+    
+    <script src="play.js" async defer></script>    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHrn3ecByPhO6nvW1xQHLsO61joCBIGds&libraries=places&callback=playJourney"
+        async defer></script>
+  
+  </body>
+</html>
