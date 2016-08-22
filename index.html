@@ -33,6 +33,12 @@
           <td><input id="input_waypoint_ok" type="button" value="Ok" /></td>
         <tr>
         <tr>
+          <div id="div_select_mode>">
+            <td>How did you get here:</td>
+            <td><select id="select_mode"><option>DRIVING</option><option>OTHER</option></select></td>
+          </div>
+        <tr>        
+        <tr>
           <td>Optional notes: </td>
           <td><input id="input_notes" placeholder="Notes" type="text" /></td>
         <tr>
@@ -40,7 +46,7 @@
     </div>
 
     <script src="edit.js" async defer></script>    
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHrn3ecByPhO6nvW1xQHLsO61joCBIGds&libraries=places&callback=editJourney"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHrn3ecByPhO6nvW1xQHLsO61joCBIGds&libraries=places,geometry&callback=editJourney"
         async defer></script>
   
   </body>

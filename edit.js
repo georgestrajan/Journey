@@ -21,6 +21,7 @@ function editJourney() {
         
         // we start off by adding a waypoint
         showAddWaypointUI();                    
+
     }
     
     function saveJourney() {
@@ -41,11 +42,14 @@ function editJourney() {
                 Name : waypoints[i].Name,
                 Notes : waypoints[i].Notes,
                 Location : waypoints[i].Place.geometry.location,
-                PlaceId : waypoints[i].Place.place_id
+                PlaceId : waypoints[i].Place.place_id,
+                Mode : waypoints[i].Mode,
+                Poly : waypoints[i].Poly
             });
         }        
         
         journeyString = JSON.stringify(journey);
+        debugger;
     } 
             
     // show the UI for adding a waypoint and handle the user interactions that follow     
@@ -59,6 +63,8 @@ function editJourney() {
       
       var input_notes = document.getElementById('input_notes');
       input_notes.value = "";
+
+      var select_mode = document.getElementById('select_mode');
 
       var addUI = document.getElementById('div_addWaypoint');
       addUI.style.display = "inline-block";
@@ -129,6 +135,18 @@ function editJourney() {
         currentWaypoint.Notes = input_notes.value;
                 
         currentlyAddingWaypointIndex += 1;
+
+        currentWaypoint.Mode = select_mode.value;
+
+        // set the polygon that is the route between the last waypoint and the one we are adding
+        if (currentlyAddingWaypointIndex > 0) {
+
+          getPoly(waypoints[currentlyAddingWaypointIndex - 1], currentWaypoint,
+            function(poly) {
+              currentWaypoint.Poly = poly;
+            });
+        }
+
         addWaypointToList(currentlyAddingWaypointIndex, currentWaypoint)
           
       };
@@ -207,5 +225,29 @@ function editJourney() {
         return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
             s4() + '-' + s4() + s4() + s4();
     }
+
+    function getPoly(origin, dest, callback) {
+
+        if (dest.Mode == "DRIVING") {
+          var directionsService = new google.maps.DirectionsService;
+          
+          directionsService.route({
+              origin: origin.Place.geometry.location,
+              destination: dest.Place.geometry.location,
+              travelMode: 'DRIVING'
+            }, function(response, status) {
+
+              if (status === 'OK' && response && response.routes.length > 0) {
+                  callback(response.routes["0"].overview_polyline);
+              }
+
+            });
+        }
+
+        var path = [origin.Place.geometry.location, dest.Place.geometry.location];
+        callback(google.maps.geometry.encoding.encodePath(path));
+      }
+
+   
                     
 }

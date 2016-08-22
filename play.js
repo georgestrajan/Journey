@@ -1,7 +1,7 @@
 function playJourney() {
     
     var journey = {
-   "Id":"85954303-f984-7743-7cfe-e40a67a77fff",
+   "Id":"8f7e0129-47ff-a1b9-5ff6-919c9cbb5ecc",
    "Title":"Untitled journey",
    "Stops":[
       {
@@ -11,16 +11,19 @@ function playJourney() {
             "lat":47.6062095,
             "lng":-122.3320708
          },
-         "PlaceId":"ChIJVTPokywQkFQRmtVEaUZlJRA"
+         "PlaceId":"ChIJVTPokywQkFQRmtVEaUZlJRA",
+         "Mode":"DRIVING"
       },
       {
-         "Name":"Kansas City, MO, United States",
+         "Name":"Kansas City, KS, United States",
          "Notes":"Drove to KC!",
          "Location":{
-            "lat":39.0997265,
-            "lng":-94.57856670000001
+            "lat":39.11405299999999,
+            "lng":-94.6274636
          },
-         "PlaceId":"ChIJl5npr173wIcRolGqauYlhVU"
+         "PlaceId":"ChIJFTXPJ-SMwIcRBR7DcHt3d9w",
+         "Mode":"DRIVING",
+         "Poly":"ybqaHj_tiV`nDste@rcMybm@rgA_|O`aE{zRh_Hu_W`_By~Zq~BypEvcEu`D`nJaqF|nH}nKxwKon[x~Cai_@hbEinTlzR}wa@ljOmjXdXox\\ncCk`YblAkfm@mj@wfLm`Gxf@csJoyIyeJcdPiC{fqA`gBikw@qrCkfcCao@cvMsjIuzMgtLqs^gvJquW{}{@qp}AulJekj@v@gtb@m|Fko`@f\\ajOveFmbShcHcnOjAegYtcNs}c@vaB}mp@vvI{n^pnA{gRfMqbTdxCwoKdvBezPdhCizWvaJc|_@vgDyzJdvGop\\lxDuqDjR}rFd}FqsQbkJ}qQb_I_|Bb_MmbJ}j@oxLqFgkVn{C_oNeoD{vKaZqnQvzP}|e@zjLwt[uOyfKttMcwXlkLq{MvpB_a`@|Umd`@zq@{fXhiM_kZt_Lawe@bhGu_NfsBivJxfSgtAntWvfEf_OvjEbmTfHbcH_xIlgCss\\xmFkdSteGwcE~{AqhYbaFakhA}~Eg|[eC{hm@|xHcrd@jfUyil@jyLg|TriDm{ZorAoak@n~AoaQi|KcbUxvBow_@{wFqlFcmRab_AvsR_t^~qCky[bGq{OxnBeePz{Eye]h`Jukc@usG}|d@mnFe``@idM_ug@oaMg_TttDuiVniBe{Z|hAswh@ncC{~_AraLiyOnyOgnGrfJoxb@zl@kia@_Gc~TsgFkkOwqFqeR{{Dwel@vsCkxi@|gEcwWtp@y|c@jvMkggAr}Hk}n@doJckQb|Qmjr@xsYcobAft]aieAh_NwoRd{k@imlAnrJwgEbfJoxKb`OkqSzeJamO~fPulXfnZqgQ|tLqzLfvDszKysAwp_@byAqmiAh@y_Y`aDw|J|kAwaSzvGc`N~mEibOfmJ{}Ln`Qmfx@ygAqbaBwEmhYcxH{`UjlAiht@dGs}ZgqCysWx_AofuAtLico@zpFicv@hgMgfp@~dEaj^l|Aqtw@ryDmmjApsBu~yBbxCqlNlA{oq@_M{ak@vJknc@rzIkzPoKgrp@bbIxn@dbZtjB`{aAwBvwv@qDxaTclRxk[qbe@z{GosD~YcyKr{RerGj}]{mVxyQqxE|cWulP|m[s}ArdGiyDlu]qzFl_SkoU|}\\aoBnbWsaEjxCvtFfvD{nKh`Gg}BhvP~n@j{RedDbcs@`nAxaPy|M|}JoyPbwWk}K|bYkdPv`TqnUzkIs~RdzNkhMngd@mlbAtoE_lIf~OgwAjc|@}VfcPohB|eDkvE`|Eu|Hf|KimD|bNmnExhHfL"
       },
       {
          "Name":"Chicago, IL, United States",
@@ -29,7 +32,9 @@ function playJourney() {
             "lat":41.8781136,
             "lng":-87.62979819999998
          },
-         "PlaceId":"ChIJ7cv00DwsDogRAMDACa2m4K8"
+         "PlaceId":"ChIJ7cv00DwsDogRAMDACa2m4K8",
+         "Mode":"DRIVING",
+         "Poly":"ckvmFt|p`QiHuv@lLcXnb@ciApBm}Bu@{qAkiAa]utBtQ{j@_d@sgB_Kw_Ak^}OwuBodB{aC_vAyeBsTqfAw{B}xBuxC_hBmjAwVitAmwCybB_aA_bNmbG}uMgbGatNqqHuqMudD}aWofEaf@{[ghAoRaKoYg@_gANap@cVkUcR}Kv@ygAfAm|A~Ey}GjSkjKn{@spBjX}kAyDkiHsDgrXoV{|^xKijGyCar@wnAa}@mnCucE[_~GsVa_c@_H{dg@yH{oFzn@uxDry@qbIhXoy[iB_pMk`@mlGxcAmv[ig@ayG~v@}tF|Og~B_Eg{Dca@e`BrEoaG|UypXwJodFzcA{xAd{B{aOpqCetSt@c}Bxf@k~@vfBumKhp@g}Hui@w~B`H{uDpl@yaAvj@slOki@ygDnEc|DmYc}E}hBonCyRinKc\\ocCmP{}HdOytD{wAweCag@gxByFeyIo`@alDohBkwHsu@ii@ii@o^ht@eiDpbCisGr[}vGyeCeqGdQmy@vm@}Y|dB_|BsRunEntA_cF`_Aq`IdGexHrZqlGrf@gkBdl@yiBhSsbEyWmuGa_@sgPqj@ocHkc@}{Cf`@qaDr`@ipM`Deek@eCalDea@}fEeI}hD_|CefDkvCm{DrByfQ{Tmo]sD}rLuw@ixCyAa|Ljw@wlEnEgxDoLk~D}l@arCak@a{@inDug@arCcf@u~CGwbHhSoaDuDy}@ioAirDczCst@g@a`B}iCgjDklDuoAcp@e_AgV}\\aaAea@q}@o~CsgCmaBky@o_AknAotC_`B}uL{Gm[av@kA}fD_QirHcLmrBsoBs{A}}GkaJuUmsAieAajAknAcUcdD_iEii@i}Ait@ca@kdCq~BguAg_D{mCsmBcnB_nCmPy|@mfBefA{tCuaD}hAiFukBvr@{mGiN_uCqPyWws@bDmtKgLqeBkgB}~CkaCmhBqbAw|DwqDmfGevDepAev@uk@g]uyCapE_oCy`Dk`B__Cm@ygAiUihDg{CicCgw@o_Eq`Bm|CkqAcgH{FecImlRgqDgdDsbBub@iiB_h@sUsn@qn@gdCgeDwdDozBujCccDg[gs@aVcVqj@us@suGkrEqpGw{CqiD}gAoWwwAaiBovF}qHwlDkdA{pBurAalBgxDkt@ks@ukQvQi`Qj[{cCkiA_eBuf@swDfDkkAshAov@ad@quFLyr@gt@_wAgeDkiGmdOkbE}gKg{BqkHyaAavCcLulBm^koGokDkmDmwD{zQikC{pM{F{qB}u@sFylCiA"
       },
       {
          "Name":"Copenhagen, Denmark",
@@ -38,100 +43,95 @@ function playJourney() {
             "lat":55.6760968,
             "lng":12.568337100000008
          },
-         "PlaceId":"ChIJIz2AXDxTUkYRuGeU5t1-3QQ"
-      },
-      {
-         "Name":"Malmö, Sweden",
-         "Notes":"Day trip to Malmo!",
-         "Location":{
-            "lat":55.604981,
-            "lng":13.003822000000014
-         },
-         "PlaceId":"ChIJ_5HEdKUFU0YR5YhIvd8FqdM"
+         "PlaceId":"ChIJIz2AXDxTUkYRuGeU5t1-3QQ",
+         "Mode":"OTHER",
+         "Poly":"eir~FfezuOm|esAk}pbR"
       },
       {
          "Name":"Bucharest, Romania",
-         "Notes":"Flew to Bucharest",
+         "Notes":"Had to visit family...",
          "Location":{
             "lat":44.4267674,
             "lng":26.102538399999958
          },
-         "PlaceId":"ChIJT608vzr5sUARKKacfOMyBqw"
-      },
-      {
-         "Name":"Focșani, Vrancea County, Romania",
-         "Notes":"Spent time with parents",
-         "Location":{
-            "lat":45.69647450000001,
-            "lng":27.184042999999974
-         },
-         "PlaceId":"ChIJo5Yhh6MYtEARMtKEEvmfigc"
+         "PlaceId":"ChIJT608vzr5…OE",
+         "Mode":"OTHER",
+         "Poly":"sfyrIcwukAhctcAwkrqA"
       },
       {
          "Name":"Istanbul, İstanbul, Turkey",
-         "Notes":"A week in Istanbul!",
-         "Location":{
-            "lat":41.0082376,
-            "lng":28.97835889999999
-         },
-         "PlaceId":"ChIJawhoAASnyhQR0LABvJj-zOE"
+         "Notes":"A week in this grand city of mosques!",
+         "Location":{"lat":41.0082376,"lng":28.97835889999999},
+         "PlaceId":"ChIJawhoAASnyhQR0LABvJj-zOE",
+         "Mode":"OTHER",
+         "Poly":"ibdnG{ci~CxtzS{tpP"
       },
       {
          "Name":"Kuala Lumpur Federal Territory of Kuala Lumpur Malaysia",
-         "Notes":"Landed in SE Asia!",
+         "Notes":"First stop in SE Asia! It is hot and humid :(",
          "Location":{
             "lat":3.139003,
             "lng":101.68685499999992
          },
-         "PlaceId":"ChIJ5-rvAcdJzDERfSgcL1uO2fQ"
+         "PlaceId":"ChIJ5-rvAcdJzDERfSgcL1uO2fQ",
+         "Mode":"OTHER",
+         "Poly":"olhyFwyzoDvicfFa{wzL"
       },
       {
          "Name":"Siem Reap, Cambodia",
-         "Notes":"2 weeks exploring the temples of Angkor!",
+         "Notes":"2 weeks exploring the Angkor Wat temples",
          "Location":{
             "lat":13.3670968,
             "lng":103.84481340000002
          },
-         "PlaceId":"ChIJeaiRjJoWEDER-rvlPvmqQKk"
+         "PlaceId":"ChIJeaiRjJoWEDER-rvlPvmqQKk",
+         "Mode":"OTHER",
+         "Poly":"wadRyuskRstl}@gndL"
       },
       {
          "Name":"Battambang, Cambodia",
-         "Notes":"A couple of days exploring Battambang",
+         "Notes":"Going off route to Cambodia's second largest city",
          "Location":{
             "lat":13.09573,
             "lng":103.20220549999999
          },
-         "PlaceId":"ChIJ5dfd6pZJBTERk-PpXJXOVZw"
+         "PlaceId":"ChIJ5dfd6pZJBTERk-PpXJXOVZw",
+         "Mode":"DRIVING",
+         "Poly":"{vqpA_eyxR[~D[rEmCQcBy@_FwCeC{AiDrGgJxP}Und@_Unb@uPz[qD`Hc@JmSba@sFlKaBnBOPyJxRuSl`@e]vp@cb@`y@ePtYct@buAsDbFiFzEcG|K{s@vtAec@py@wSt`@kIfS}KvXmJpQ{V|c@mm@fgA_CxDsOl^kGnOk^t|@{AnEM`DWlGu@tC}CnH_MpZeYbr@a}@lwBmi@bqAgNx\\yg@poAk\\xv@_W|m@_k@jtAoRxf@i~@zxB}^n}@uMjc@u]`lAuGnUOlBYtGeJz_@eLde@yNbk@{ZjnAgSjn@cDxJwQli@aS~k@}JlXcHpS}p@~oBcLx[kJ`Vk]jcAqRtj@eFnVyIlb@MJ?NqAhIuOxv@qK`Zc@vBAnCsI~qBmHjaBsAd\\eBpUmAbZaArUgWpxBeIdq@mIpl@{G~f@wEpS{Mxb@iJ|T_EzYoAle@sA|c@{A~`@y@dOwG~nAoj@`iKiQteDaB~ZeFrSuBxIw@|Lk@xKa@nBaBxl@}@|MiG|gAwCvl@_Dbe@qBd_@eDtm@b@jKtv@t`JbLnqAn\\luDfFn\\lCfE`IjJji@xq@bJjM~VjYjX|ZjXd[jFrFrPjBh\\xDfDh@VX`@MDQtSsH~PaG|KkQ|@yFXwAfEqFjBsAfBUvCO~IsBfESrTXxr@iEpT}CnAYbEmCpD_DZwAn@_NrBqj@lK{[rGga@fHmh@hC}XfCqDtEeCvJqF`MaGhJkEnAKjf@bJ|w@lOra@dHdS~BzZdCrj@hDtzArHnk@|Cxc@jAxFIxY{@|LuAdU_Dd]yE`YuCnKc@~UIbD?xIpCtB^l]nDjl@sGnVqC`Ki@~i@}Bxp@sB|`@w@xTq@vCi@|XsJnm@}Sxt@oWngAw_@jJgD`OcHdb@uV`UkNvHqGxL_IbZ{OreA}j@j]kSri@mY`AaAdVqMrQqItd@sQ~p@}XrGgDbw@qe@fc@aZ|R_MjRqKzIcEb_@wErXb@lGd@`YtGLoAtn@{GjPiCbHcCxH_BhUaItm@gR~RoGzIsEnCUtLkFfLeFrPqHzc@_SxMuHjBw@jHaApD[hAh@lAC`bAyCp^gAldA_DlxAwEvpA{Gbo@aDbSwFr_@iJ`KaCpEkBjG_IzKeKpMkL|M}RfZme@tJ}O`BwA|\\w@ru@iAhTe@rA_@dAaAx@qCfA{JfCiVzByVpFqs@|Gs|@dAwj@B_@DsMM_Oa@eQkBoYuA{MaAoKi@kI[iIZa@Do@Qw@`A_IrEs_@z@{Bz@aCxAh@vBt@pBb@~HrAfRhA`Ib@vBLhA{JlDD"
       },
       {
          "Name":"Phnom Penh, Cambodia",
-         "Notes":"\"The pearl of Asia\" as Lonely Planet calls it",
+         "Notes":"Lots of bussing to the Cambodian capital",
          "Location":{
             "lat":11.5448729,
             "lng":104.89216680000004
          },
-         "PlaceId":"ChIJ42tqxz1RCTERuyW1WugOAZw"
+         "PlaceId":"ChIJ42tqxz1RCTERuyW1WugOAZw",
+         "Mode":"DRIVING",
+         "Poly":"kw|nAws{tR~KNbG{@YyBEg@D]nE_Q|CwLZENWlHa^rXwjAAo@tIy_@dB_T~AyP~QcLlm@eXfFeGde@aw@doA}gBni@eq@l^e^nO_q@hLuU~HkHls@u}@fXkLlh@gSji@_Jfj@gQbWaK~qB_`AdlBc}@zn@{]ffBycA`RaJtm@gPh`AyWjk@wOzbCyq@vlAma@jrB{t@rjBshAtqKimHlOcK|a@yLpn@ySvcCywBrbAc}A`GgNzGkb@r{@{hGlf@woDlr@g|EdCeKz^we@t~BsnCxTyx@fj@ayBvo@mcB`k@e_Bbl@giB|v@obCxRen@vM_Ypu@exA`~AqzC|gDcsGheAerBng@kaAvXwaAtN}i@jc@otA~z@wgC`Wyu@hLkq@rEqx@|Dg`CbAsl@nLyqGcIiyJeH_iP_AsfDQcWgIaW{Rkj@`@_OdHeq@lYkxA~_@giB~]oeC`Kui@bj@cgBzh@ucBjOof@`Xcs@xm@usAzi@ymA~Wqm@nCgWlJa{@hLsgAbE{g@ByP{HkcBb@qY`Kkk@tTikAzMck@~e@wi@dv@giAnGkMn]q[h`@eYzgAcYjn@}J~u@sYdc@uZ|XsMza@_Htl@kSpMwK~NsEb\\CbH{Dnt@q~@vi@gv@~n@siAxi@gu@laA}kA|mAitA`v@ebAvcBenAbaCwaBrLaJ`EkI|h@soAqOgcA{Du^~CgfAjCq\\pD{G|O{L~Vwl@rUoa@nEqJ@sN|AqGvHaJnAoNtAyApWJxAGdC{ChTyLtGIbaAlG~y@tF~dAdJdqBl^dTlB~r@wBpt@_Ct]aEfT}Cjj@{TheDktBn}A}`AzwFcyB~tCcdApdCeHfjAePj`@fIxZlIpr@fNnp@lAzZfFj`@lFvt@rEr|@zEfdAlJrm@zLvgA|UfqB~a@rs@nNjYWj^qBth@aI~rCgb@xgAuSnj@cOdT_Jnb@kTt}@sk@xk@g`@rTk{@xAgw@kLou@kN}u@aKgg@W{NyEaVcDeLVmf@x@yF|HuEr|@ob@xrAye@ri@{\\jNyNrq@__@lQiGjIDrdA}Sb{@}EndAyCll@{B|YeCpWuGtc@iMld@aL|a@yM|a@}C|e@cAlYqEhs@aXz|Acm@hwAe}@j_@kOlaAmq@zPsMdS}WfCi@lBhAdEqBjB\\dCi@xFuCvRiNfOoLv~@wl@lxAwm@xY}Fn_@_FpJaA`N|@|HjErHxLKh@h@VnRlZzNvTnLtHnyAcDpViBbNeGdD_A|AjAlKtJrQpGtOkA`Q_LdDs@bHl@bFmApKuJb@_C"
       },
       {
-         "Name":"Sihanoukville, Cambodia",
-         "Notes":"Beach time!",
+         "Name":"Sihanoukville, Preah Sihanouk, Cambodia",
+         "Notes":"Finally beach time !",
          "Location":{
-            "lat":10.7581899,
-            "lng":103.8216261
+            "lat":10.6253016,
+            "lng":103.52339630000006
          },
-         "PlaceId":"ChIJgVIpXRHhBzERWV-LJqT_nmk"
+         "PlaceId":"ChIJRUxWL93hBzER7WJDJdr48RM",
+         "Mode":"DRIVING",
+         "Poly":"ozmeAqwe_SViDtEcDn`@h_@hUbU~Edq@~PfbCbGj{@vApRyXnCmIdBmItIeAdEzAvB`CbGbCdEtLfVaK`RvG`j@tHdz@jGnq@hDjNpQd_@nL`[xTnsAdLz[vWvk@jGzc@|SvgBlQdkAr@lh@K|aArAl]fMb~@lGhsAlPjr@pFv\\rId[rUn~@|Y|uBxRlkA|PzyAx`@riCfIp\\lFtz@{@l|Ah@jc@`BxZrh@xpBzRpr@nKdQrElWp_@jcCrDtRjHhMpSbKdS|GdNnJvWpf@vx@hoA~T`c@xI|TtWzeAt[noB`d@drAdZf}@tRhd@|g@dt@rK`Zll@bt@dWrYbr@nb@pj@jr@n]l\\fOfW|OdYpUjk@nP~[jTx_@ja@h`@dy@z|An|AbzCb[rg@jWzo@bnCprFnwBvhEzz@znAtw@taAxn@f}@bp@ljAzw@hwAvh@ru@lYdj@fWhr@tK~d@zI`o@lNjLxE|[hHjYvFlTlg@dlAxC~P`Cdy@cBjh@fM||AtJtc@hG~Jfb@xb@dPxO`M|G|KjKbXha@j}@twAbs@lhAhPhg@jj@fwAxSpc@|c@|iAbj@toAxYfc@ry@bt@heAd}@fY`Zr]np@|h@|jAnVfj@jJdb@nFvQjWnj@xI|^fBbGfJbLrKtN`@bLkM~Xk@xIvAvE`_@l]|WvWxMb^tAnRp@xPdL~MfEvFhEfTlCnRlOlVfI`RtTdu@fAv^pApEbCtB|PpEbQhO|IpDbs@hSnd@rKnmAuEfw@eFls@}Rrv@aEf_@s@fp@hGtQH~JeAte@sAf\\nIxPqB|^yJ`]}MhTsJvX}R`gAk|@~RwGfNl@rNlEjY|@vc@{KxFuCjMuO~KgFpJWzw@zFxhCgCnt@SrMtAbp@xOzf@lK`TpDrh@lB|eA|IzPkArsAr@hkAz@jfAfGjy@qA`UBhYbDlc@x@pKtCvJ~GpKbCfSUvTsJtMiDtd@zCfVsBfXwRzKeI~WcG~j@{SdXaJ~OqBtn@jP`p@xRhh@fV~dBnbA~^|Xl`@dKflBjZ|~@fPjP|I`JrHbO`F|r@hLny@`[znAfg@zz@h]fHlH`DvNcMfgD_C|iAM`u@PdS|CrSbJri@mDbrAkQ|yBmBfZ~BrS~G|g@lChYmBtJwiAh`Bia@pf@wLzQiDxYxFfKf^|c@v@`a@|ErT@tTmEfVgPhSsXxc@e`@js@_HfS_CfIgTtV{y@x}@ad@ze@yHpNqAt_AcBtEvBhB\\bJrDhMBzGU|AdGBdBFjQlC~FhClILdBbC}@pG~Ab@`AR"
       }
    ]
 };
 
     var map = null;
     var placesService = null;
-    //var currentPoint = 0;
     
     // array of markers on the map
     var markers = [];
     
     var prevInfoWindow = null;
+    var prevFlyLine = null;
 
     init();
     
@@ -149,12 +149,31 @@ function playJourney() {
     }
     
     function playJourney() {
-                        
-        var speed = 1.2;        
-        play(0);
-        
+
+        var SPEED = 1.3;
+        var ZOOM_MS = 300;
+        var BRINGINTOVIEW_MS = 700;
+        var ADDMARKER_MS = 1000;
+        var DIRECTIONS_MS = 1000;
+        var NEXT_MS = BRINGINTOVIEW_MS + ADDMARKER_MS + DIRECTIONS_MS;
+
+        var totalTime = NEXT_MS * SPEED * (journey.Stops.length + 1);
+
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer({
+              draggable: false,
+              hideRouteList: true,
+              preserveViewport: true,
+              markerOptions : {
+                visible: false
+              }
+        });
+        directionsDisplay.setMap(map);
+
+        play(0);        
         function play(currentPoint) {
             
+            // main loop
             setTimeout(function() {           
 
                 if (currentPoint >= journey.Stops.length) {
@@ -167,31 +186,66 @@ function playJourney() {
                 var currentName = journey.Stops[currentPoint].Name;
                 var currentNotes = journey.Stops[currentPoint].Notes;
                 var marker = null;
-
                 
-                if (currentPoint == 0) {
-                    
+                if (currentPoint == 0) {                    
+
                     bringPointIntoView(latLng);
                     setZoomToCoverPoints(0);
+
                 } else {
                     
                     var prevLat = journey.Stops[currentPoint - 1].Location.lat;
                     var prevLon =  journey.Stops[currentPoint -1].Location.lng;            
                     var prevLatLng = new google.maps.LatLng(prevLat, prevLon);
+                    var prevName = journey.Stops[currentPoint - 1].Name;
                     
                     var distance = getDistanceBetweenPoints(prevLat, prevLon, currentLat, currentLon);
                     console.log(distance);        
-                        
+                    
+                    // zoom in or out to show both the previos point and the current one    
                     setTimeout(function () { 
                         setZoomToCoverPoints(distance);
-                    }, speed * 700);
+                    }, SPEED * ZOOM_MS);
 
                     setTimeout(function () { 
                         bringPointIntoView(latLng);
-                    }, speed * 1500);
+                    }, SPEED * BRINGINTOVIEW_MS);
+
+                    setTimeout(function () { 
+                        var driving = false;
+                        if (journey.Stops[currentPoint].Mode == "DRIVING") {
+                            driving = true;
+                        }
+
+                        /*
+                        TODO we should clear the previous lines that were driving lines, IF we are flying now
+                        if (prevFlyLine) {
+                            prevFlyLine.setMap(null);
+                            prevFlyLine.setPath(null);
+                        }
+                        */
+                        
+
+                        var path = google.maps.geometry.encoding.decodePath(journey.Stops[currentPoint].Poly);
+                        var geodesic = true;
+                        if (driving) {
+                            geodesic = false;
+                        }
+                        var flyLine = new google.maps.Polyline({
+                              strokeColor: '#73b9ff',
+                              strokeOpacity: 0.7,
+                              strokeWeight: 6,
+                              geodesic: geodesic,
+                              map: map
+                            });
+                        flyLine.setPath(path);
+                        prevFlyLine = flyLine;
+
+                    }, SPEED * DIRECTIONS_MS);
                     
                 }
-                                                                
+                
+                // add the marker and the info window                                                                
                 setTimeout(function () { 
                     
                     marker = addMarkerToMap(latLng);
@@ -202,12 +256,23 @@ function playJourney() {
                     }
                     prevInfoWindow = infoWindow;
                     
-                }, speed * 2000);
-                
+                }, SPEED * ADDMARKER_MS);                
+
+                // recurse to the next point
                 play(currentPoint + 1);
                 
-            }, speed * 3500);
+            }, getNextTime());
+
+            function getNextTime() {
+                // this is so we start instantly for the first point
+                if (currentPoint == 0) {
+                    return 1;
+                }
+                return SPEED * NEXT_MS;
+            }
+
         }
+
 
     }   
     
@@ -243,24 +308,19 @@ function playJourney() {
     function setZoomToCoverPoints(distanceBetweenPoints) {
         
         // TODO this should be reconsidered, the distances and zoom levels seem arbitrary
-        var zoomLevel, defaultZoomLevel = 7;
+        // we should have a better algorithm that minimizes the number of times we have to change the zoom
+        var zoomLevel, defaultZoomLevel = 5;
         
         var currentZoomLevel = map.getZoom();
         
-        if (distanceBetweenPoints < 500) {
+        if (distanceBetweenPoints < 2500) {
             zoomLevel = defaultZoomLevel;
         }
-        else if (distanceBetweenPoints < 1000) {
+        else if (distanceBetweenPoints < 5000) {
             zoomLevel = defaultZoomLevel - 1;
         }
-        else if (distanceBetweenPoints < 3000) {
-            zoomLevel = defaultZoomLevel - 2;
-        }
-        else if (distanceBetweenPoints < 5000) {
-            zoomLevel = defaultZoomLevel - 3;
-        }
         else {
-            zoomLevel = defaultZoomLevel - 4;
+            zoomLevel = defaultZoomLevel - 2;
         }
         
         // don't let zoomLevel reach 1
@@ -269,7 +329,7 @@ function playJourney() {
         }
         
         console.log("Set zoom level: " + zoomLevel);
-        //map.setZoom(zoomLevel);
+        map.setZoom(zoomLevel);
         var zoomOut = false;
         
         if (zoomLevel < currentZoomLevel) {
@@ -283,22 +343,6 @@ function playJourney() {
             } else {                
                 zoomArr.push(currentZoomLevel + i + 1);                
             }
-        }
-        
-        // 2 to 6
-        // i = 0, 1, 2, 3
-        // 3, 4, 5, 6
-                
-        var z = 0;
-        function zoom(z) {
-            setTimeout(function () {
-                if (!zoomArr[z]) {
-                    return;
-                }
-                
-                map.setZoom(zoomArr[z]);
-                zoom(z + 1);
-            }, 200);
         }
         
     }
