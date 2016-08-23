@@ -1,0 +1,21 @@
+{
+  "name": "journey",
+  "version": "1.0.0",
+  "description": "App for showcasing journeys",
+  "engines": {
+    "node": "4.2.6"
+  },
+  "scripts": {
+    "start": "node journey.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georgestrajan/Journey.git"
+  },
+  "author": "George Strajan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/georgestrajan/Journey/issues"
+  },
+  "homepage": "https://github.com/georgestrajan/Journey#readme"
+}

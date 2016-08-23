@@ -127,9 +127,7 @@ function playJourney() {
     var map = null;
     var placesService = null;
     
-    // array of markers on the map
-    var markers = [];
-    
+    var prevMarker = null;   
     var prevInfoWindow = null;
     var prevFlyLine = null;
 
@@ -139,22 +137,48 @@ function playJourney() {
         var mapDiv = document.getElementById('map');
         map = new google.maps.Map(mapDiv, {
             center: {lat: 0, lng: 0},
-            zoom: 1
-        });
+            zoom: 2,
+            disableDefaultUI: true,
+            styles: [
+            {
+              featureType: 'all',
+              stylers: [
+                { saturation: -30 }
+              ]
+            },{
+              featureType: 'poi',
+              stylers: [
+                { visibility: 'off' }
+              ]
+            },{
+              featureType: 'administrative.land_parcel',
+              stylers: [
+                { visibility: 'off' }
+              ]
+            },{
+              featureType: 'administrative.province',
+              stylers: [
+                { visibility: 'off' }
+              ]
+            },{
+              featureType: 'transit',
+              stylers: [
+                { visibility: 'off' }
+              ]
+            }
+          ]});
         
         placesService = new google.maps.places.PlacesService(map);
-
-        var playJourneyButton = document.getElementById('button_playJourney');
-        playJourneyButton.onclick = playJourney;    
+        playJourney();
     }
     
     function playJourney() {
 
         var SPEED = 1.3;
         var ZOOM_MS = 300;
-        var BRINGINTOVIEW_MS = 700;
-        var ADDMARKER_MS = 1000;
-        var DIRECTIONS_MS = 1000;
+        var BRINGINTOVIEW_MS = 500;
+        var ADDMARKER_MS = 700;
+        var DIRECTIONS_MS = 700;
         var NEXT_MS = BRINGINTOVIEW_MS + ADDMARKER_MS + DIRECTIONS_MS;
 
         var totalTime = NEXT_MS * SPEED * (journey.Stops.length + 1);
@@ -217,14 +241,10 @@ function playJourney() {
                             driving = true;
                         }
 
-                        /*
-                        TODO we should clear the previous lines that were driving lines, IF we are flying now
                         if (prevFlyLine) {
                             prevFlyLine.setMap(null);
                             prevFlyLine.setPath(null);
                         }
-                        */
-                        
 
                         var path = google.maps.geometry.encoding.decodePath(journey.Stops[currentPoint].Poly);
                         var geodesic = true;
@@ -247,14 +267,24 @@ function playJourney() {
                 
                 // add the marker and the info window                                                                
                 setTimeout(function () { 
+
+                    if (prevMarker) {
+                        prevMarker.setMap(null);
+                        var image = 'https://storage.googleapis.com/www.georgestrajan.com/smallStart.png';
+                        var visitedMarker = new google.maps.Marker({
+                                  position: prevLatLng,
+                                  map: map,
+                                  icon: image
+                                });
+                    }
                     
                     marker = addMarkerToMap(latLng);
-                    markers.push(marker);            
                     var infoWindow = addInfoWindow(marker, currentName , currentNotes);
                     if (prevInfoWindow) {
                         prevInfoWindow.close();
                     }
                     prevInfoWindow = infoWindow;
+                    prevMarker = marker;
                     
                 }, SPEED * ADDMARKER_MS);                
 
@@ -279,15 +309,17 @@ function playJourney() {
     function addMarkerToMap(latLng) {
         var marker = new google.maps.Marker({
         map: map,
-        position: latLng,
-        animation: google.maps.Animation.DROP
+        position: latLng
+        // TODO Do we want this animation ? I feel it's more distracting than useful
+        //animation: google.maps.Animation.DROP
       });
         return marker;        
     }
     
     function addInfoWindow(marker, name, notes) {
         var infowindow = new google.maps.InfoWindow();
-        infowindow.setContent('<div>' + notes);// + '</strong><br>' + notes);     
+        var html = '<div id="im"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Space_Needle002.jpg" style="width:150px;height:100px"></div> <div>' + notes + '</div>';
+        infowindow.setContent(html);// + '</strong><br>' + notes);     
         infowindow.open(map, marker);
         return infowindow;
     }

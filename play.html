@@ -10,10 +10,11 @@
       }
      #map {          
         width: 100%;
-        height: 70%;
+        height: 100%;
         margin: 0;
         padding: 0;
         background-color: #CCC;
+        position: absolute;
         top: 0;
         left: 0;
       }
@@ -25,9 +26,6 @@
   </head>
   <body>
       <div id="map"></div>          
-      <div id="controls">
-        <input id="button_playJourney" type="button" value="Play journey" />
-      </div>
     
     <script src="play.js" async defer></script>    
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHrn3ecByPhO6nvW1xQHLsO61joCBIGds&libraries=places,geometry&callback=playJourney"
