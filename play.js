@@ -174,6 +174,9 @@ function playJourney() {
     
     function playJourney() {
 
+        var points = [];
+        var zooms = [];
+
         var SPEED = 1.3;
         var ZOOM_MS = 300;
         var BRINGINTOVIEW_MS = 500;
@@ -194,37 +197,61 @@ function playJourney() {
         });
         directionsDisplay.setMap(map);
 
-        play(0);        
+        init();
+        play(0);
+
+        // initializes our points array; calculates distances between points
+        function init() {
+            for (var i = 0 ; i < journey.Stops.length ; i++) {
+                var distance = 0;
+                
+                var currentLat = journey.Stops[i].Location.lat;
+                var currentLon = journey.Stops[i].Location.lng;
+                var latLng = new google.maps.LatLng(currentLat, currentLon);
+                var currentName = journey.Stops[i].Name;
+                var currentNotes = journey.Stops[i].Notes;
+
+                if (i > 0) {
+                    var prevLat = journey.Stops[i - 1].Location.lat;
+                    var prevLon =  journey.Stops[i -1].Location.lng;            
+                    var prevLatLng = new google.maps.LatLng(prevLat, prevLon);
+                    distance = getDistanceBetweenPoints(prevLat, prevLon, currentLat, currentLon);
+                }
+                var point = {
+                    LatLng: latLng,
+                    Name: currentName,
+                    Notes: currentNotes,
+                    Distance: distance,
+                    Poly : journey.Stops[i].Poly,
+                    Mode: journey.Stops[i].Mode
+                };
+                points.push(point);
+            }
+        }
+
         function play(currentPoint) {
             
             // main loop
             setTimeout(function() {           
 
-                if (currentPoint >= journey.Stops.length) {
+                if (currentPoint >= points.length) {
                     return;
                 }
                 
-                var currentLat = journey.Stops[currentPoint].Location.lat;
-                var currentLon = journey.Stops[currentPoint].Location.lng;
-                var latLng = new google.maps.LatLng(currentLat, currentLon);
-                var currentName = journey.Stops[currentPoint].Name;
-                var currentNotes = journey.Stops[currentPoint].Notes;
+                var LatLng = points[currentPoint].LatLng;
+                var currentName = points[currentPoint].Name;
+                var currentNotes = points[currentPoint].Notes;
                 var marker = null;
                 
                 if (currentPoint == 0) {                    
 
-                    bringPointIntoView(latLng);
+                    bringPointIntoView(LatLng);
                     setZoomToCoverPoints(0);
 
                 } else {
                     
-                    var prevLat = journey.Stops[currentPoint - 1].Location.lat;
-                    var prevLon =  journey.Stops[currentPoint -1].Location.lng;            
-                    var prevLatLng = new google.maps.LatLng(prevLat, prevLon);
-                    var prevName = journey.Stops[currentPoint - 1].Name;
-                    
-                    var distance = getDistanceBetweenPoints(prevLat, prevLon, currentLat, currentLon);
-                    console.log(distance);        
+                    var prevLatLng = points[currentPoint-1].LatLng;
+                    var distance = points[currentPoint].Distance;                    
                     
                     // zoom in or out to show both the previos point and the current one    
                     setTimeout(function () { 
@@ -232,12 +259,12 @@ function playJourney() {
                     }, SPEED * ZOOM_MS);
 
                     setTimeout(function () { 
-                        bringPointIntoView(latLng);
+                        bringPointIntoView(LatLng);
                     }, SPEED * BRINGINTOVIEW_MS);
 
                     setTimeout(function () { 
                         var driving = false;
-                        if (journey.Stops[currentPoint].Mode == "DRIVING") {
+                        if (points[currentPoint].Mode == "DRIVING") {
                             driving = true;
                         }
 
@@ -246,7 +273,7 @@ function playJourney() {
                             prevFlyLine.setPath(null);
                         }
 
-                        var path = google.maps.geometry.encoding.decodePath(journey.Stops[currentPoint].Poly);
+                        var path = google.maps.geometry.encoding.decodePath(points[currentPoint].Poly);
                         var geodesic = true;
                         if (driving) {
                             geodesic = false;
@@ -270,7 +297,13 @@ function playJourney() {
 
                     if (prevMarker) {
                         prevMarker.setMap(null);
-                        var image = 'https://storage.googleapis.com/www.georgestrajan.com/smallStart.png';
+                        var image = {
+                          url: 'https://storage.googleapis.com/www.georgestrajan.com/1471984144_star.png',                          
+                          size: new google.maps.Size(32, 32),
+                          origin: new google.maps.Point(0, 0),
+                          anchor: new google.maps.Point(8, 8),
+                          scaledSize: new google.maps.Size(16, 16)
+                        };
                         var visitedMarker = new google.maps.Marker({
                                   position: prevLatLng,
                                   map: map,
@@ -278,7 +311,7 @@ function playJourney() {
                                 });
                     }
                     
-                    marker = addMarkerToMap(latLng);
+                    marker = addMarkerToMap(LatLng);
                     var infoWindow = addInfoWindow(marker, currentName , currentNotes);
                     if (prevInfoWindow) {
                         prevInfoWindow.close();
@@ -345,14 +378,11 @@ function playJourney() {
         
         var currentZoomLevel = map.getZoom();
         
-        if (distanceBetweenPoints < 2500) {
-            zoomLevel = defaultZoomLevel;
-        }
-        else if (distanceBetweenPoints < 5000) {
+        if (distanceBetweenPoints > 2500) {
             zoomLevel = defaultZoomLevel - 1;
         }
         else {
-            zoomLevel = defaultZoomLevel - 2;
+            zoomLevel = defaultZoomLevel;
         }
         
         // don't let zoomLevel reach 1
@@ -360,7 +390,7 @@ function playJourney() {
             zoomLevel = 2;
         }
         
-        console.log("Set zoom level: " + zoomLevel);
+        console.log("Set zoom level: " + zoomLevel + " Distance: " + distanceBetweenPoints);
         map.setZoom(zoomLevel);
         var zoomOut = false;
         
