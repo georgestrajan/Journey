@@ -45,7 +45,7 @@ function editJourney() {
                 PlaceId : waypoints[i].Place.place_id,
                 Mode : waypoints[i].Mode,
                 Poly : waypoints[i].Poly,
-                Photo: waypoints[i].Poly
+                Photo: waypoints[i].Photo
             });
         }        
         
@@ -68,6 +68,7 @@ function editJourney() {
       var select_mode = document.getElementById('select_mode');
 
       var input_photo = document.getElementById('input_photo');
+      input_photo.value = "";
 
       var addUI = document.getElementById('div_addWaypoint');
       addUI.style.display = "inline-block";
