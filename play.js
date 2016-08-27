@@ -177,7 +177,7 @@ function playJourney() {
         var points = [];
         var zooms = [];
 
-        var SPEED = 1.3;
+        var SPEED = 0.7;
         var ZOOM_MS = 300;
         var BRINGINTOVIEW_MS = 500;
         var ADDMARKER_MS = 700;
@@ -351,7 +351,7 @@ function playJourney() {
     
     function addInfoWindow(marker, name, notes) {
         var infowindow = new google.maps.InfoWindow();
-        var html = '<div id="im"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Space_Needle002.jpg" style="width:150px;height:100px"></div> <div>' + notes + '</div>';
+        var html = '<div id="im"><img src="https://lh3.googleusercontent.com/_PRbSpLRtjGH8Em0Jbt8-abEv5Da-F6M8plUyvy0m-ahwlDwvxUyBlFNrCXsIrBvGvAJT1SaQJnV5w=w1748-h983-no" style="transform: translate3d(0px, 0px, 0px); width: 300px; height: 168px;"></div> <div>' + notes + '</div>';
         infowindow.setContent(html);// + '</strong><br>' + notes);     
         infowindow.open(map, marker);
         return infowindow;

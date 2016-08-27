@@ -44,7 +44,8 @@ function editJourney() {
                 Location : waypoints[i].Place.geometry.location,
                 PlaceId : waypoints[i].Place.place_id,
                 Mode : waypoints[i].Mode,
-                Poly : waypoints[i].Poly
+                Poly : waypoints[i].Poly,
+                Photo: waypoints[i].Poly
             });
         }        
         
@@ -65,6 +66,8 @@ function editJourney() {
       input_notes.value = "";
 
       var select_mode = document.getElementById('select_mode');
+
+      var input_photo = document.getElementById('input_photo');
 
       var addUI = document.getElementById('div_addWaypoint');
       addUI.style.display = "inline-block";
@@ -137,6 +140,7 @@ function editJourney() {
         currentlyAddingWaypointIndex += 1;
 
         currentWaypoint.Mode = select_mode.value;
+        currentWaypoint.Photo = input_photo.value;
 
         // set the polygon that is the route between the last waypoint and the one we are adding
         if (currentlyAddingWaypointIndex > 0) {
