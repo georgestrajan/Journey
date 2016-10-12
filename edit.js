@@ -13,7 +13,8 @@ function editJourney() {
         var mapDiv = document.getElementById('map');
         map = new google.maps.Map(mapDiv, {
             center: {lat: 0, lng: 0},
-            zoom: 1
+            zoom: 2,
+            disableDefaultUI: true
         });
         
         var saveJourneyButton = document.getElementById('button_saveJourney');
